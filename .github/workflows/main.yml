@@ -23,11 +23,6 @@ jobs:
         channel: 'stable'
     - run: |
         cd sample_app
-        echo "building app for release."
-        echo  ${{secrets.KEY_MARKET_PLACE}}
-        echo  ${{secrets.ALIAS_PASSWORD}}
-        echo  ${{secrets.KEY_PASSWORD}}
-        echo $KEY_JKS
         echo $KEY_JKS > android/sample.keystore
         flutter pub get
         flutter build appbundle --target-platform android-arm,android-arm64,android-x64
