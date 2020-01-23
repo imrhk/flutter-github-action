@@ -31,10 +31,10 @@ jobs:
         echo $KEY_JKS > android/sample.keystore
         flutter pub get
         flutter build appbundle --target-platform android-arm,android-arm64,android-x64
-        env:
-            KEY_JKS: ${{secrets.KEY_MARKET_PLACE}}
-            KEY_PASSWORD: ${{secrets.ALIAS_PASSWORD}}
-            ALIAS_PASSWORD: ${{secrets.KEY_PASSWORD}}
+      env:
+        KEY_JKS: ${{secrets.KEY_MARKET_PLACE}}
+        KEY_PASSWORD: ${{secrets.ALIAS_PASSWORD}}
+        ALIAS_PASSWORD: ${{secrets.KEY_PASSWORD}}
     - name: Push APK to Releases
       uses: ncipollo/release-action@v1
       with:
