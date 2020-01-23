@@ -23,6 +23,7 @@ jobs:
         channel: 'stable'
     - run: |
         cd sample_app
+        echo "building app for release."
         echo $KEY_JKS
         echo $KEY_JKS > android/sample.keystore
         flutter pub get
