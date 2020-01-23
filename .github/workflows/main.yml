@@ -20,13 +20,13 @@ jobs:
       with:
         channel: 'stable'
     - run: flutter pub get
-      working-directory: sample-app
+      working-directory: sample_app
     - run: flutter build apk --debug --split-per-abi
-      working-directory: sample-app
+      working-directory: sample_app
     - name: Push APK to Releases
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "sample-app/build/app/outputs/apk/debug/*.apk"
+        artifacts: "sample_app/build/app/outputs/apk/debug/*.apk"
         token: ${{ secrets.TOKEN }}
     
       
